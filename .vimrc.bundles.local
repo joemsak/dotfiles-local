@@ -1,0 +1,3 @@
+Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t && ruby extconf.rb && make'
+    \ }
