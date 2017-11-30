@@ -1,7 +1,10 @@
 [alias]
+  co = checkout
   br = branch
+  ci = commit
+  st = status
 
-  l = "!source ~/.githelpers && pretty_git_log"
+  l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
   r = !git l -30
   ra = !git r --all
