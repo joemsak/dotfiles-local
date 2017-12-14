@@ -17,4 +17,9 @@ nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
 
-set wildignore+=*.swp,*.bak,*.gif,*.png,*.jpg,*.jpeg,*.git,*/tmp,*/log,*/node_modules,*/bower_comonents
+set wildignore+=*.swp,*.bak
+set wildignore+=*.pdf
+set wildignore+=*.gif,*.png,*.jpg,*.JPG,*.jpeg,*.ico,*.svg
+set wildignore+=*.git,*/tmp,*/log
+set wildignore+=*/node_modules,*/bower_comonents
+set wildignore+=*.woff,*.ttf,*.eot
