@@ -18,12 +18,12 @@
 # break this.
 
 LOG_HASH="%C(yellow)%h%Creset"
-LOG_RELATIVE_TIME="%Cgreen(%ar)%Creset"
+LOG_RELATIVE_TIME="%C(green)(%ar)%Creset"
 LOG_AUTHOR="%C(bold blue)<%an>%Creset"
 LOG_REFS="%C(bold red)%d%Creset"
 LOG_SUBJECT="%s"
 
-LOG_FORMAT="$LOG_HASH}$LOG_RELATIVE_TIME}$LOG_AUTHOR}$LOG_REFS $LOG_SUBJECT"
+LOG_FORMAT="$LOG_HASH $LOG_RELATIVE_TIME $LOG_AUTHOR $LOG_REFS $LOG_SUBJECT"
 
 BRANCH_PREFIX="%(HEAD)"
 BRANCH_REF="%(color:red)%(color:bold)%(refname:short)%(color:reset)"
@@ -32,7 +32,7 @@ BRANCH_DATE="%(color:green)(%(committerdate:relative))%(color:reset)"
 BRANCH_AUTHOR="%(color:blue)%(color:bold)<%(authorname)>%(color:reset)"
 BRANCH_CONTENTS="%(contents:subject)"
 
-BRANCH_FORMAT="$BRANCH_PREFIX}$BRANCH_REF}$BRANCH_HASH}$BRANCH_DATE}$BRANCH_AUTHOR}$BRANCH_CONTENTS"
+BRANCH_FORMAT="$BRANCH_PREFIX $BRANCH_REF $BRANCH_HASH $BRANCH_DATE $BRANCH_AUTHOR $BRANCH_CONTENTS"
 
 ANSI_BLACK='\033[30m'
 ANSI_BLACK_BOLD='\033[0;30;1m'
@@ -55,19 +55,19 @@ ANSI_RESET='\033[0m'
 
 show_git_head() {
     pretty_git_log -1
-    git show -p --pretty="tformat:"
+    git show -p --color --pretty="tformat:"
 }
 
 pretty_git_log() {
-    git log --graph --pretty="tformat:${LOG_FORMAT}" $* | pretty_git_format
+    git log --color --graph --pretty="tformat:${LOG_FORMAT}" $* | pretty_git_format
 }
 
 pretty_git_branch() {
-    git branch -v --format=${BRANCH_FORMAT} $* | pretty_git_format
+    git branch -v --color --format=${BRANCH_FORMAT} $* | pretty_git_format
 }
 
 pretty_git_branch_sorted() {
-    git branch -v --format=${BRANCH_FORMAT} --sort=-committerdate $* | pretty_git_format
+    git branch -v --color --format=${BRANCH_FORMAT} --sort=-committerdate $* | pretty_git_format
 }
 
 pretty_git_format() {
@@ -76,7 +76,6 @@ pretty_git_format() {
     # Replace (2 years, 5 months) with (2 years)
     sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/' |
     # Line columns up based on } delimiter
-    column -s '}' -t |
     # Color merge commits specially
     sed -Ee "s/(Merge (branch|remote-tracking branch|pull request) .*$)/$(printf $ANSI_RED)\1$(printf $ANSI_RESET)/" |
     # Page only if we're asked to.
