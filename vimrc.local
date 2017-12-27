@@ -23,3 +23,5 @@ set wildignore+=*.gif,*.png,*.jpg,*.JPG,*.jpeg,*.ico,*.svg
 set wildignore+=*.git,*/tmp,*/log
 set wildignore+=*/node_modules,*/bower_comonents
 set wildignore+=*.woff,*.ttf,*.eot
+
+set belloff=all
