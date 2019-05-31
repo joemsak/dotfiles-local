@@ -3,3 +3,4 @@ Plug 'wincent/command-t', {
     \ }
 Plug 'posva/vim-vue'
 Plug 'sunaku/vim-ruby-minitest'
+Plug 'leafgarland/typescript-vim'
