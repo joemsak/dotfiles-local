@@ -23,7 +23,7 @@
   status = auto
 
 [merge]
-  tool = opendiff
+  tool = code
 
 [branch "master"]
   rebase = true
