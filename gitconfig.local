@@ -23,7 +23,10 @@
   status = auto
 
 [merge]
-  tool = code
+  tool = vscode
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
 
 [branch "master"]
   rebase = true
