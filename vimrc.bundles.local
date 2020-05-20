@@ -1,6 +1,5 @@
-Plug 'wincent/command-t', {
-    \   'do': 'cd ruby/command-t && ruby extconf.rb && make'
-    \ }
 Plug 'posva/vim-vue'
 Plug 'sunaku/vim-ruby-minitest'
+Plug 'preservim/nerdcommenter'
 Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
