@@ -8,3 +8,5 @@ export PATH="$GOPATH/bin:/usr/local/opt/postgresql@9.6/bin:$PATH"
 # must be below the .asdf source commands ^
 export PATH="$(yarn global bin):$PATH"
 eval "$(dip console)"
+
+export TERM='xterm-256color'

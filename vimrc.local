@@ -1,13 +1,9 @@
 let mapleader = ","
-let g:CommandTMaxFiles=80085
 let g:jsx_ext_required = 0
 
 nnoremap <leader>p :set invpaste paste?<CR>
 set pastetoggle=<leader>p
 set showmode
-
-noremap <C-t> :CommandT<CR>
-noremap <C-g> :CommandTFlush<CR>
 
 " vim-test mappings
 nnoremap <silent> <Leader>t :TestFile<CR>
@@ -24,4 +20,9 @@ set wildignore+=*.git,*/tmp,*/log
 set wildignore+=*/node_modules,*/bower_comonents
 set wildignore+=*.woff,*.ttf,*.eot
 
-set belloff=all
+set path+=**
+set wildmenu
+
+set ttimeout
+set ttimeoutlen=250
+set notimeout
