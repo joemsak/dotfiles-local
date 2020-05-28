@@ -26,3 +26,8 @@ set wildmenu
 set ttimeout
 set ttimeoutlen=250
 set notimeout
+
+set background=dark
+autocmd vimenter * colorscheme gruvbox
+
+set visualbell
