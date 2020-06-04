@@ -3,17 +3,20 @@ alias audacity=/Applications/Audacity.app/Contents/MacOS/Audacity
 export KADENZE_SSH_USER=jsak
 export PATH=/home/joemsak/.local/bin:$PATH
 
-eval "$(dip console)"
+#eval "$(dip console)"
 
 export TERM='xterm-256color'
 
 cd ~/work/kadenzeweb
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach -t default || tmux new -s default
+  tmux attach -t default -d || tmux new -s default -d
+  tmux split-window -v
+  tmux split-window -h
+  tmux -2 attach-session -d
 fi
 
 . $HOME/.asdf/asdf.sh
 
-eval $(ssh-agent)
-ssh-add ~/.ssh/id_rsa
+#eval $(ssh-agent)
+#ssh-add ~/.ssh/id_rsa

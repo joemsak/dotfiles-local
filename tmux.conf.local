@@ -39,5 +39,3 @@ bind m \
 bind M \
     set -g mouse off \;\
     display 'Mouse: OFF'
-
-bind y run "tmux save-buffer - | xsel -ib" \; display-message "Copied tmux buffer to system clipboard"
