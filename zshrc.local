@@ -1,9 +1,9 @@
-alias audacity=/Applications/Audacity.app/Contents/MacOS/Audacity
+# alias audacity=/Applications/Audacity.app/Contents/MacOS/Audacity
 
 export KADENZE_SSH_USER=jsak
 export PATH=/home/joemsak/.local/bin:$PATH
 
-#eval "$(dip console)"
+# eval "$(dip console)"
 
 export TERM='xterm-256color'
 
@@ -18,5 +18,5 @@ fi
 
 . $HOME/.asdf/asdf.sh
 
-#eval $(ssh-agent)
-#ssh-add ~/.ssh/id_rsa
+# eval $(ssh-agent)
+# ssh-add ~/.ssh/id_rsa
