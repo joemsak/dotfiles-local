@@ -1,3 +1,7 @@
+[init]
+  defaultBranch = main
+  templatedir = ~/.git_template
+
 [alias]
   co = checkout
   br = branch
