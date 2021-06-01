@@ -39,8 +39,5 @@ augroup END
 let g:go_version_warning = 0
 let g:coc_disable_startup_warning = 1
 
-let test#ruby#rspec#executable = 'dip rspec'
-let test#ruby#rspec#options = '-t~app:kannu'
-
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
