@@ -1,6 +1,11 @@
 let mapleader = ","
 let g:jsx_ext_required = 0
 
+let g:ale_fixers = {
+ \ 'javascript': ['eslint', 'prettier']
+ \ }
+let g:ale_fix_on_save = 1
+
 nnoremap <leader>p :set invpaste paste?<CR>
 set pastetoggle=<leader>p
 set showmode
