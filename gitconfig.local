@@ -5,6 +5,11 @@
 [alias]
   co = checkout
   br = branch
+
+  # I keep fudging these keypresses
+  bre = branch
+  ber = branch
+
   ci = commit
   st = status
 
