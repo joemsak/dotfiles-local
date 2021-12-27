@@ -1,17 +1,15 @@
 #!/bin/sh
 
+set -e
+
 rubyfiles=$(git diff --cached --name-only --diff-filter=ACM "*.rb" "*.rake" "Gemfile" "Rakefile" | tr '\n' ' ')
 [ -z "$rubyfiles" ] && exit 0
 
 # Standardize all ruby files
-echo "💅 Automatically formatting staged Ruby files using standardrb ($(echo $rubyfiles | wc -w | awk '{print $1}') total)"
+echo "💅 Formatting staged Ruby files using standardrb ($(echo $rubyfiles | wc -w | awk '{print $1}') total)"
 echo "$rubyfiles" | xargs bundle exec standardrb --fix
 
-result=$?
-
 # Add back the modified/prettified files to staging
-echo "$rubyfiles" | xargs git add
+# echo "$rubyfiles" | xargs git add
 
-# Replace $result with 0 if you don't want this hook to block your commit
-# exit 0
-exit $result
+exit 0
