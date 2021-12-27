@@ -34,6 +34,9 @@
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 
+[branch "main"]
+  rebase = true
+
 [branch "master"]
   rebase = true
 
