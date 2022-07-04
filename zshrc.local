@@ -1,23 +1,17 @@
 # alias audacity=/Applications/Audacity.app/Contents/MacOS/Audacity
-
-. ~/.profile
-
 # eval "$(dip console)"
+# eval $(ssh-agent)
+# ssh-add ~/.ssh/id_rsa
 
 export TERM='xterm-256color'
 
-cd $HOME/work
+cd $HOME/work/memberspace/memberspace_platform
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach -t default -d || tmux new -s default -d
   tmux split-window -h
   tmux -2 attach-session -d
 fi
-
-export ZSH_THEME=robbyrussell
-
-# eval $(ssh-agent)
-# ssh-add ~/.ssh/id_rsa
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
@@ -36,6 +30,9 @@ export PATH=$HOME/.local/bin:$GOROOT/bin:$PATH
 # MemberSpace stuff
 export SUPER_ADMIN_EMAILS=support+dev-joemsak@memberspace.com
 export WEB_DRIVER=chrome
+. ~/.profile # Sensitive info goes here
+
+export ZSH_THEME=robbyrussell
 
 plugins=(asdf)
 . $HOME/.oh-my-zsh/oh-my-zsh.sh
