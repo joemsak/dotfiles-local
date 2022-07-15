@@ -28,7 +28,7 @@ export GOROOT=/usr/local/go
 export PATH=$HOME/.local/bin:$GOROOT/bin:$PATH
 
 # MemberSpace stuff
-export SUPER_ADMIN_EMAILS=support+dev-joemsak@memberspace.com
+export SUPER_ADMIN_EMAILS=support+dev-joemsak@memberspace.com,joemsak@memberspace.com
 export WEB_DRIVER=chrome
 . ~/.profile # Sensitive info goes here
 
