@@ -27,7 +27,7 @@ export VIMDATA=$HOME/local/share/nvim
 export GOROOT=/usr/local/go
 export PATH=$HOME/.local/bin:$GOROOT/bin:$PATH
 
-. ~/.profile # Sensitive info goes here
+. ~/.sensitive-env
 
 export ZSH_THEME=robbyrussell
 
