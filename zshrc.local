@@ -8,9 +8,13 @@ export TERM='xterm-256color'
 cd $HOME/work/memberspace_platform
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach -t default -d || tmux new -s default -d
-  tmux split-window -h
-  tmux -2 attach-session -d
+  if tmux ls &> /dev/null; then
+    tmux attach -t default -d
+  else
+    tmux new -s default -d
+    tmux split-window -h
+    tmux -2 attach-session -d
+  fi
 fi
 
 export VISUAL=nvim
