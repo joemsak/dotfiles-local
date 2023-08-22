@@ -35,4 +35,5 @@ export ZSH_THEME=robbyrussell
 
 plugins=(asdf)
 . $HOME/.oh-my-zsh/oh-my-zsh.sh
-export $(grep -v '^#' /Users/joemsak/work/memberspace_platform/.secrets.app.env && grep -v '^#' /Users/joemsak/work/memberspace_platform/.compose.app.env | xargs)
+
+export $(grep -v '^#' $HOME/work/memberspace_platform/.secrets.app.env && grep -v '^#' $HOME/work/memberspace_platform/.compose.app.env | xargs)
