@@ -30,10 +30,10 @@ export VIMDATA=$HOME/local/share/nvim
 
 export GOROOT=/usr/local/go
 export PATH=$HOME/.local/bin:$GOROOT/bin:$PATH
-
 export ZSH_THEME=robbyrussell
 
 plugins=(asdf)
 . $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 export $(grep -v '^#' $HOME/work/memberspace_platform/.secrets.app.env && grep -v '^#' $HOME/work/memberspace_platform/.compose.app.env | xargs)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
